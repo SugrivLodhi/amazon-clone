@@ -1,0 +1,111 @@
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: rgb(71, 45, 45);
+    color: aliceblue;
+    height: 6rem;
+    
+}
+.header_logo >img {
+    width: 12rem;
+}
+.header_flag >img{
+    width: 3rem;
+}
+.header .header_location {
+    display: flex;
+    align-items: center;
+}
+.header .header_location > a{
+    color: aliceblue;
+}
+ .header .header_location .location_icon
+{
+    width: 2.5rem;
+    height: 2.5rem;  
+}
+.header .header_location .location_text >p{
+       font-weight: 600;
+       padding-left: 0.4rem;
+}
+.header .header_location .location_text >h4{
+    font-size: 1.4rem;
+    font-weight: 700;
+    padding-left: 0.4rem;
+}
+.header_input {
+    border: 1px solid gray;
+    width: 48rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+}
+.header_input >input{
+    flex: 1;
+    border: none;
+    outline: none;
+    height: 2.9rem;
+}
+.header_input > select {
+    border-right: 0.2rem salmon;
+    height: 3.1rem;
+    border: beige;    
+    background-color: beige;
+}
+.header .header_input .header_search {
+    width: 4rem ;
+    height: 3.1rem;
+  background-color: #e7b353;
+  border-left: 0.1rem solid #e7b353;
+  margin-right: 0;
+  cursor: pointer;
+}
+.header .header_flag {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.header .header_sign{
+    cursor: pointer;
+    color: antiquewhite;
+   
+}
+.header > a {
+    text-decoration: none;
+    color: aliceblue;
+    z-index: 10;  
+}
+.header .header_sign >p{
+    font-weight: 500;
+}
+.header .header_sign > h3{
+    font-weight: 700;
+}
+.header .header_order > p{
+    font-weight: 700;
+}
+.header .header_order >h3 {
+    font-weight: 800;
+}
+ .header .header_cart {
+    display: flex;
+    align-items: center;
+ }
+ .header .header_cart .cart_item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+ }
+ .header .header_cart .cart_item >span{
+    font-weight: 700;
+    font-size: 1.3rem;
+ }
+.header .header_cart .cart_item >.cart {
+   width: 3rem;
+  height: 3rem;
+}
+.header .header_cart >span {
+    font-size: 1.3rem;
+    font-weight: 700;
+}  
