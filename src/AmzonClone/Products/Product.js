@@ -2,6 +2,8 @@ import React from "react";
 import "./Product.css";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { Link } from "react-router-dom";
+import { useDispatch} from "react-redux";
+import { addInBasket } from "../Redux/Action";
 const Product = ({
   id,
   title,
@@ -9,6 +11,11 @@ const Product = ({
   rating,
   image,
 }) => {
+  const dispatch = useDispatch();
+  const onAddBasketItem = () =>{
+      const item = {id,title,price, rating,image}
+    dispatch(addInBasket(item))  
+  }
   return (
     <div className="product" key ={id}>
       <div className="infos">
@@ -28,7 +35,7 @@ const Product = ({
         </div>
         </div>
         <img src={image}  alt ="item"/>
-         <button>
+         <button onClick={onAddBasketItem}>
         <i>
           <ShoppingCartIcon />
         </i>
