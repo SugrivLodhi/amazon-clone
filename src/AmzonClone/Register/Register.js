@@ -9,13 +9,12 @@ const Register = () => {
   const [password, setPassword] = useState("");
   let { user } = useSelector((state) => state.data);
   let dispatch = useDispatch();
-  console.log("user value", user);
   let navigate = useNavigate();
   useEffect(() => {
     if (user) {
       navigate("/");
     }
-  }, [user]);
+  }, [user,navigate]);
 
   const sign_in = (e) => {
     e.preventDefault();
@@ -48,9 +47,9 @@ const Register = () => {
             continue
           </button>
           <div className="details">
-            <p key="register">Already have Account ?</p>
+            <p>Already have Account ?</p>
             <Link to="/login" className="signIn-link">
-              <p key="amzon-register">Login</p>
+              <p>Login</p>
             </Link>
           </div>
         </form>

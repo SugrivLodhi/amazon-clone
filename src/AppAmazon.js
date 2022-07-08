@@ -16,6 +16,7 @@ import Payment from "./AmzonClone/Payment/Payment";
 
 const AppAmazon = () => {
   const dispatch = useDispatch();
+
   useEffect(() => {
     auth.onAuthStateChanged((authUser) => {
       if (authUser) {
@@ -53,7 +54,7 @@ const AppAmazon = () => {
             element={
               <>
                 <Header />
-                <Payment />
+                <Payment />              
               </>
             }
           />

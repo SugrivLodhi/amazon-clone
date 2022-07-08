@@ -6,7 +6,8 @@
 
 .checkout-product-image {
   width: 200px;
-  height: 280px;
+  height: 250px;
+  object-fit: contain;
 }
 
 .checkout-product-info {

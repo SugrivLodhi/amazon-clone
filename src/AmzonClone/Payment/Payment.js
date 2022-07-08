@@ -6,7 +6,9 @@ import CheckoutProduct from "../CheckOut/CheckoutProduct";
 import { getBasketTotal } from "../CheckOut/BasketTotal";
 const Payment = () => {
   const { user, basket } = useSelector((state) => state.data);
-  const handleSubmit = () => {};
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
   return (
     <div className="payment">
       <div className="payment-container">
@@ -50,7 +52,7 @@ const Payment = () => {
                   {" "}
                   Order Total <strong>${getBasketTotal(basket)}</strong>
                 </h3>
-                <button>
+                <button type="submit">
                   <span>buy now</span>
                 </button>
               </div>

@@ -17,8 +17,8 @@
 
 .single-product-image {
   object-fit: contain;
-  width: 300px;
-  height: max-content;
+  width: 100%;
+ max-height:200px; 
 }
 
 .single-product-info {
