@@ -8171,6 +8171,11 @@ react-app-polyfill@^3.0.0:
     regenerator-runtime "^0.13.9"
     whatwg-fetch "^3.6.2"
 
+react-currency-flags@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/react-currency-flags/-/react-currency-flags-0.1.2.tgz#bf472d54dd1d4b3b0c931e8ea0ba7c50b7b81f09"
+  integrity sha512-p51uPd3hPe6gTigLNZusTjiurXiau1wxnGZyQkwZFTptWhuai+KG//kAwZaCWp0zzNI7sfjKUPXw4fVbi8ep8g==
+
 react-dev-utils@^12.0.1:
   version "12.0.1"
   resolved "https://registry.yarnpkg.com/react-dev-utils/-/react-dev-utils-12.0.1.tgz#ba92edb4a1f379bd46ccd6bcd4e7bc398df33e73"

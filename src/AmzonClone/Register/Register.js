@@ -1,28 +1,27 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import logo from "../Img/amazon _logo2.png";
-import './Register.css';
-import {useDispatch,useSelector } from "react-redux";
+import "./Register.css";
+import { useDispatch, useSelector } from "react-redux";
 import { registerintial } from "../Redux/Action";
 const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  let {user} = useSelector((state) => state.data);
+  let { user } = useSelector((state) => state.data);
   let dispatch = useDispatch();
-   console.log("user value",user)
-   let navigate = useNavigate();
-   useEffect(() =>{
-       if(user){
-        navigate('/')
-       }
-    },[user,dispatch])
- 
+  console.log("user value", user);
+  let navigate = useNavigate();
+  useEffect(() => {
+    if (user) {
+      navigate("/");
+    }
+  }, [user]);
+
   const sign_in = (e) => {
     e.preventDefault();
-    dispatch(registerintial(email,password))
+    dispatch(registerintial(email, password));
     setEmail("");
     setPassword("");
-    
   };
   return (
     <div className="register">
@@ -49,9 +48,9 @@ const Register = () => {
             continue
           </button>
           <div className="details">
-            <p key='register'>Already have Account ?</p>
+            <p key="register">Already have Account ?</p>
             <Link to="/login" className="signIn-link">
-              <p key ='amzon-register' >Login</p>
+              <p key="amzon-register">Login</p>
             </Link>
           </div>
         </form>

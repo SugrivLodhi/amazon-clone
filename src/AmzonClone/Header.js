@@ -6,17 +6,17 @@ import LocationOnIcon from "@mui/icons-material/LocationOn";
 import Search from "@mui/icons-material/Search";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import { useSelector,useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import "./Header.css";
 import { logoutSuccess } from "./Redux/Action";
 const Header = () => {
-  let { user,basket} = useSelector((state) => state.data);
-  let disptch =useDispatch();
-  const handleLogout = () =>{
-       if(user){
-        disptch(logoutSuccess())
-       }
-      }
+  let { user, basket } = useSelector((state) => state.data);
+  let disptch = useDispatch();
+  const handleLogout = () => {
+    if (user) {
+      disptch(logoutSuccess());
+    }
+  };
   return (
     <div className="header">
       <Link to="/">
@@ -45,27 +45,27 @@ const Header = () => {
         <ExpandMoreIcon />
       </div>
       <Link to={`${user ? "/" : "/login"}`}>
-        <div className="header_sign" onClick={handleLogout} >
+        <div className="header_sign" onClick={handleLogout}>
           <p>Hello,{user ? user.email : "Gest"} </p>
           <h3>Account & Lists</h3>
         </div>
       </Link>
       <Link to="/login">
-      <div className="header_sign">
-        <p>Your </p>
-        <h3>Prime</h3>
-      </div>
-    </Link>
+        <div className="header_sign">
+          <p>Your </p>
+          <h3>Prime</h3>
+        </div>
+      </Link>
       <Link to="/order">
         <div className="header_order">
           <p>Returns</p>
           <h3>& Orders</h3>
         </div>
       </Link>
-      <Link to="/cartItem">
+      <Link to="/checkout">
         <div className="header_cart">
           <div className="cart_item">
-            <span>{basket && basket.length }</span>
+            <span>{basket && basket.length}</span>
             <ShoppingCartIcon className="cart" />
           </div>
           <span>Cart</span>

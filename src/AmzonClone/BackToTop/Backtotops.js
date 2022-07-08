@@ -3,7 +3,7 @@ import "./BacktoTops.css";
 const Backtotops = () => {
   const [isVisible, setIsVisible] = useState(false);
   const toggleVisibility = () => {
-    if (window.pageYOffset >700) {
+    if (window.pageYOffset > 700) {
       setIsVisible(true);
     } else {
       setIsVisible(false);

@@ -22,60 +22,56 @@ const Home = () => {
         <div className="home-container">
           <Slider images={bannerImages} />
           <div className="home-row">
-        {
-          products.slice(0,2).map((item,index) =>{
-            return (
-              <Product 
-              key ={item.id}
-               id={item.id}
-               title={item.title}
-               detail ={item.detail}
-               image ={item.image}
-               specification ={item.specification}
-               rating ={item.rating}
-               price ={item.price}
-              />
-            )
-          })
-         }
-        </div>
-        <div className="home-row">
-        {
-         products.slice(2,5).map((item,index) =>{
-           return (
-             <Product 
-               key ={item.id}
-              id={item.id}
-              title={item.title}
-              detail ={item.detail}
-              image ={item.image}
-              specification ={item.specification}
-              rating ={item.rating}
-              price ={item.price}
-             />
-           )
-         })
-        }
-       </div>
-       <div className="home-row">
-       {
-        products.slice(5,6).map((item,index) =>{
-          return (
-            <Product 
-            key ={item.id}
-             id={item.id}
-             title={item.title}
-             detail ={item.detail}
-             image ={item.image}
-             specification ={item.specification}
-             rating ={item.rating}
-             price ={item.price}
-            />
-          )
-        })
-       }  
-        </div>
-       <div style={{ marginTop: "4rem" }}><Backtotops/> </div>
+            {products.slice(0, 2).map((item, index) => {
+              return (
+                <Product
+                  key={item.id}
+                  id={item.id}
+                  title={item.title}
+                  detail={item.detail}
+                  image={item.image}
+                  specification={item.specification}
+                  rating={item.rating}
+                  price={item.price}
+                />
+              );
+            })}
+          </div>
+          <div className="home-row">
+            {products.slice(2, 5).map((item, index) => {
+              return (
+                <Product
+                  key={item.id}
+                  id={item.id}
+                  title={item.title}
+                  detail={item.detail}
+                  image={item.image}
+                  specification={item.specification}
+                  rating={item.rating}
+                  price={item.price}
+                />
+              );
+            })}
+          </div>
+          <div className="home-row">
+            {products.slice(5, 6).map((item, index) => {
+              return (
+                <Product
+                  key={item.id}
+                  id={item.id}
+                  title={item.title}
+                  detail={item.detail}
+                  image={item.image}
+                  specification={item.specification}
+                  rating={item.rating}
+                  price={item.price}
+                />
+              );
+            })}
+          </div>
+          <div style={{ marginTop: "4rem" }}>
+            <Backtotops />{" "}
+          </div>
         </div>
       </div>
     </div>

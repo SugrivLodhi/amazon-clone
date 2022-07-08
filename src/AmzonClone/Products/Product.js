@@ -2,27 +2,22 @@ import React from "react";
 import "./Product.css";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { Link } from "react-router-dom";
-import { useDispatch} from "react-redux";
+import { useDispatch } from "react-redux";
 import { addInBasket } from "../Redux/Action";
-const Product = ({
-  id,
-  title,
-  price,
-  rating,
-  image,
-}) => {
+const Product = ({ id, title, price, rating, image }) => {
   const dispatch = useDispatch();
-  const onAddBasketItem = () =>{
-      const item = {id,title,price, rating,image}
-    dispatch(addInBasket(item))  
-  }
+  const onAddBasketItem = () => {
+    const item = { id, title, price, rating, image };
+    dispatch(addInBasket(item));
+    alert("Do you want to add this Item in your cart");
+  };
   return (
-    <div className="product" key ={id}>
+    <div className="product" key={id}>
       <div className="infos">
-        <Link to='/product' className="title">
+        <Link to="/product" className="title">
           <p>{title}</p>
         </Link>
-       <p className="price">
+        <p className="price">
           <strong>$</strong>
           <strong>{price}</strong>
         </p>
@@ -33,16 +28,15 @@ const Product = ({
               <p key={index}>*</p>
             ))}
         </div>
-        </div>
-        <img src={image}  alt ="item"/>
-         <button onClick={onAddBasketItem}>
+      </div>
+      <img src={image} alt="item" />
+      <button onClick={onAddBasketItem}>
         <i>
           <ShoppingCartIcon />
         </i>
         add to cart
       </button>
     </div>
-    
   );
 };
 
