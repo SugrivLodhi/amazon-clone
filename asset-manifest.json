@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/Amzon-Clone/static/css/main.22e112ba.css",
+    "main.js": "/Amzon-Clone/static/js/main.e99136d1.js",
+    "static/js/787.05cd28b3.chunk.js": "/Amzon-Clone/static/js/787.05cd28b3.chunk.js",
+    "static/media/flag.png": "/Amzon-Clone/static/media/flag.2846b1227e85326334e5.png",
+    "static/media/Banner5.jpg": "/Amzon-Clone/static/media/Banner5.4aa74f4cb129ebb2d7bc.jpg",
+    "static/media/amazon _logo2.png": "/Amzon-Clone/static/media/amazon _logo2.19e5df3e3e8811e0564a.png",
+    "static/media/amazon_offer.jpg": "/Amzon-Clone/static/media/amazon_offer.bb0c2da52cf325d6a637.jpg",
+    "static/media/Banner6.jpg": "/Amzon-Clone/static/media/Banner6.ee0b94f630e122e2bbee.jpg",
+    "static/media/Banner3.jpg": "/Amzon-Clone/static/media/Banner3.0acaccd8d667bcc63212.jpg",
+    "static/media/Banner4.jpg": "/Amzon-Clone/static/media/Banner4.c2f98254394694b2a247.jpg",
+    "static/media/Banner2.jpg": "/Amzon-Clone/static/media/Banner2.d35c8837dcbfbac6d88f.jpg",
+    "static/media/Banner1.jpg": "/Amzon-Clone/static/media/Banner1.b35cf70d1daa9c8a7b1c.jpg",
+    "static/media/amazon_logo1.png": "/Amzon-Clone/static/media/amazon_logo1.615af232e73e7d7f0140.png",
+    "index.html": "/Amzon-Clone/index.html",
+    "main.22e112ba.css.map": "/Amzon-Clone/static/css/main.22e112ba.css.map",
+    "main.e99136d1.js.map": "/Amzon-Clone/static/js/main.e99136d1.js.map",
+    "787.05cd28b3.chunk.js.map": "/Amzon-Clone/static/js/787.05cd28b3.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.22e112ba.css",
+    "static/js/main.e99136d1.js"
+  ]
+}
