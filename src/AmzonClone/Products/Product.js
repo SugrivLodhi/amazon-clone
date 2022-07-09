@@ -9,7 +9,6 @@ const Product = ({ id, title, price, rating, image }) => {
   const onAddBasketItem = () => {
     const item = { id, title, price, rating, image };
     dispatch(addInBasket(item));
-    alert("Do you want to add this Item in your cart");
   };
   return (
     <div className="product" key={id}>
