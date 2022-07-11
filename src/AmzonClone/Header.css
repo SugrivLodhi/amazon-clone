@@ -39,16 +39,17 @@
   display: flex;
   align-items: center;
 }
+
 .header_input > input {
   flex: 1;
   border: none;
   outline: none;
   height: 2.9rem;
 }
-.header_input > select {
-  border-right: 0.2rem salmon;
+ select {
+  border: none;
+  outline: none;
   height: 3.1rem;
-  border: beige;
   background-color: beige;
 }
 .header .header_input .header_search {
