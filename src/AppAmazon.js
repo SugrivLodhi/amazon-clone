@@ -36,7 +36,7 @@ const AppAmazon = () => {
       }
     });
   }, [dispatch]);
-  const erroMessgage ={message:"something went wrong"}
+ // const erroMessgage ={message:"something went wrong"}
 
   return (
     <BrowserRouter> 
