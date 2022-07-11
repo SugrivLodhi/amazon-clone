@@ -1,25 +1,25 @@
-import React, { useEffect } from "react";
+import React, { Suspense, useEffect,lazy } from "react";
 import Header from "./AmzonClone/Header";
- import Home from "./AmzonClone/Home";
+// import Home from "./AmzonClone/Home";
 import "./AppAmazon.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Location from "./AmzonClone/Location";
 import Order from "./AmzonClone/Order";
- import Login from "./AmzonClone/Login/Login";
- import Register from "./AmzonClone/Register/Register";
+ //import Login from "./AmzonClone/Login/Login";
+// import Register from "./AmzonClone/Register/Register";
 import { useDispatch } from "react-redux";
 import { auth } from "./AmzonClone/Redux/Firebase";
 import { setUser } from "./AmzonClone/Redux/Action";
- import SingleProduct from "./AmzonClone/SingleProduct/SingleProduct";
- import Checkout from "./AmzonClone/CheckOut/Checkout";
- import Payment from "./AmzonClone/Payment/Payment";
+// import SingleProduct from "./AmzonClone/SingleProduct/SingleProduct";
+// import Checkout from "./AmzonClone/CheckOut/Checkout";
+//  import Payment from "./AmzonClone/Payment/Payment";
 //Lazy loading implimentation
-// const Home = lazy(() => import('./AmzonClone/Home'));
-// const Login = lazy(() => import('./AmzonClone/Login/Login'));
-// const Register =lazy(() =>import('./AmzonClone/Register/Register'));
-// const SingleProduct = lazy(() => import('./AmzonClone/SingleProduct/SingleProduct'));
-// const Checkout = lazy(() => import('./AmzonClone/CheckOut/Checkout'));
-// const Payment = lazy(() => import('./AmzonClone/Payment/Payment')); 
+ const Home = lazy(() => import('./AmzonClone/Home'));
+ const Login = lazy(() => import('./AmzonClone/Login/Login'));
+ const Register =lazy(() =>import('./AmzonClone/Register/Register'));
+ const SingleProduct = lazy(() => import('./AmzonClone/SingleProduct/SingleProduct'));
+ const Checkout = lazy(() => import('./AmzonClone/CheckOut/Checkout'));
+ const Payment = lazy(() => import('./AmzonClone/Payment/Payment')); 
 
 
 const AppAmazon = () => {
@@ -37,9 +37,11 @@ const AppAmazon = () => {
 
   return (
     <BrowserRouter>
+    <Suspense fallback ={<h3>Loading...</h3>}>   
       <div className="App_amazon">
         <Routes>
-          <Route
+          <Route 
+            exact
             path="/"
             element={
               <>
@@ -49,6 +51,7 @@ const AppAmazon = () => {
             }
           />
           <Route
+          exact
             path="/product/:id"
             element={
               <>
@@ -58,6 +61,7 @@ const AppAmazon = () => {
             }
           />
           <Route
+          exact
             path="/payment"
             element={
               <>
@@ -67,6 +71,7 @@ const AppAmazon = () => {
             }
           />
           <Route
+          exact
             path="/location"
             element={
               <>
@@ -76,6 +81,7 @@ const AppAmazon = () => {
             }
           />
           <Route
+          exact
             path="/order"
             element={
               <>
@@ -84,9 +90,10 @@ const AppAmazon = () => {
               </>
             }
           />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
+          <Route exact path="/login" element={<Login />} />
+          <Route exact path="/register" element={<Register />} />
           <Route
+          exact
             path="/checkout"
             element={
               <>
@@ -97,7 +104,8 @@ const AppAmazon = () => {
           />
         </Routes>
       </div>
-    </BrowserRouter>
+     </Suspense> 
+</BrowserRouter>
   );
 };
 
