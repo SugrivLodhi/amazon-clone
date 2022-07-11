@@ -1,4 +1,5 @@
 import React, { Suspense, useEffect,lazy } from "react";
+import { ErrorBoundary } from "react-error-boundary";
 import Header from "./AmzonClone/Header";
 // import Home from "./AmzonClone/Home";
 import "./AppAmazon.css";
@@ -10,6 +11,7 @@ import Order from "./AmzonClone/Order";
 import { useDispatch } from "react-redux";
 import { auth } from "./AmzonClone/Redux/Firebase";
 import { setUser } from "./AmzonClone/Redux/Action";
+import ErrorHandler from "./AmzonClone/ErrorBoundry";
 // import SingleProduct from "./AmzonClone/SingleProduct/SingleProduct";
 // import Checkout from "./AmzonClone/CheckOut/Checkout";
 //  import Payment from "./AmzonClone/Payment/Payment";
@@ -34,10 +36,12 @@ const AppAmazon = () => {
       }
     });
   }, [dispatch]);
+  const erroMessgage ={message:"something went wrong"}
 
   return (
-    <BrowserRouter>
-    <Suspense fallback ={<h3>Loading...</h3>}>   
+    <BrowserRouter> 
+     <ErrorBoundary FallbackComponent={ErrorHandler} onReset ={() =>{}}>
+      <Suspense fallback ={<h3>Loading...</h3>}>   
       <div className="App_amazon">
         <Routes>
           <Route 
@@ -105,7 +109,8 @@ const AppAmazon = () => {
         </Routes>
       </div>
      </Suspense> 
-</BrowserRouter>
+     </ErrorBoundary>
+     </BrowserRouter>
   );
 };
 

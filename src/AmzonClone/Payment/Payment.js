@@ -9,6 +9,11 @@ const Payment = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
   };
+    //generate the number between 0 <Math.random() < 1 
+     if(Math.random() > 0.5){
+      return new Error("Test Error Boundary")
+     }
+
   return (
     <div className="payment">
       <div className="payment-container">
