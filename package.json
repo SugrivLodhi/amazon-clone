@@ -1,6 +1,5 @@
 {
   "name": "amazonclone",
-  "homepage": "http://SugrivLodhi.github.io/Amzon-Clone",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
