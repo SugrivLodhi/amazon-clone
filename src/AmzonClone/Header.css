@@ -1,10 +1,11 @@
 .header {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
   background-color: rgb(71, 45, 45);
   color: aliceblue;
   height: 6rem;
+  padding: 0 0.8rem;
 }
 .header_logo > img {
   width: 12rem;
@@ -106,4 +107,45 @@
 .header .header_cart > span {
   font-size: 1.3rem;
   font-weight: 700;
+}
+
+@media (min-width:768px) and (max-width: 1024px) {
+  .header .header_flag{
+    margin-left: 2rem;
+  }
+ .header_logo > img {
+  width: 9rem;
+}
+.header .header_location .location_text > h4 {
+  font-size: 1rem;
+}
+.header_input{
+  width: 32rem;
+}
+.header{
+  padding: 0 1rem;
+}
+.header_order {
+  padding: 1rem;
+}
+ }
+
+@media  (min-width:375px) and (max-width: 768px){
+  .header .header_flag{
+    margin-left: 3.5rem;
+  }
+  .header_logo > img {
+    width: 6rem;
+  }
+  .header .header_location .location_text > h4,p {
+    font-size: 0.7rem;
+  }
+  .header_input{
+    width: 20rem;
+  }
+  .header .header_sign > p,h3 {
+    font-weight: 500;
+    font-size: 0.7rem;
+  }
+  
 }

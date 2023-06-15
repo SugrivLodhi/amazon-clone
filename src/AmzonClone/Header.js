@@ -58,8 +58,7 @@ const Header = () => {
       </Link>
       <Link to="/order">
         <div className="header_order">
-          <p>Returns</p>
-          <h3>& Orders</h3>
+          <p>Returns<br/>& Orders</p>
         </div>
       </Link>
       <Link to="/checkout">

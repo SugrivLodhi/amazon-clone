@@ -31,3 +31,12 @@
   margin-bottom: -150px;
   mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
 }
+
+@media  (max-width:375px){
+  .item-container p{
+    font-size: 8px;
+  }
+  .home-row{
+    flex-direction: column;
+  }
+}

@@ -26,7 +26,7 @@ const Backtotops = () => {
     <div className="scroll-to-top">
       {isVisible && (
         <div className="back-top-container" onClick={scrollToTop}>
-          Back to top
+          <span> Back to top</span>
         </div>
       )}
     </div>

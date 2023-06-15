@@ -69,7 +69,7 @@
   .next {
     right: 0;
   }
-  @media (min-width: 800px) {
+  @media (min-width: 768px) {
     .text {
       max-width: 45em;
     }
@@ -80,4 +80,12 @@
       font-size: 2.5rem;
     }
   }
+  @media  (min-width:375px) and (max-width: 768px){
+    .section {
+      margin: 2rem auto;
+    } 
+     
+  }
+    
+  
   
