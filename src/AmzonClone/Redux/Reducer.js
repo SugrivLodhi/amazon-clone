@@ -1,12 +1,15 @@
+import { products } from "../ProductItem";
 import * as types from "./ActionType";
 const initialState = {
   loading: false,
   basket: [],
+  product:products,
+  address:"",
   user: null,
   error: null,
 };
 
-export const basketReducer = (state = initialState, action) => {
+export const reducer = (state = initialState, action) => {
   switch (action.type) {
     case types.ADD_BASKET:
       const newBasket = [...state.basket, action.payload];
@@ -19,7 +22,6 @@ export const basketReducer = (state = initialState, action) => {
       const index = state.basket.findIndex(
         (item) => item.id === action.payload
       );
-      console.log("index", index);
       if (index >= 0) {
         updateBasket.splice(index, 1);
       }
@@ -60,6 +62,16 @@ export const basketReducer = (state = initialState, action) => {
         loading: false,
         user: action.payload,
       };
+     case types.UPDATE_PRODUCT:
+      return {
+        ...state,
+       product: action.payload
+      } 
+     case types.SET_ADDRESS: 
+     return {
+      ...state,
+      address: action.payload
+     } 
     default:
       return state;
   }

@@ -4,11 +4,13 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addInBasket } from "../Redux/Action";
+import { toast } from "react-toastify";
 const Product = ({ id, title, price, rating, image }) => {
   const dispatch = useDispatch();
   const onAddBasketItem = () => {
     const item = { id, title, price, rating, image };
     dispatch(addInBasket(item));
+    toast.success("Item added to cart Successfully")
   };
   return (
     <div className="product" key={id}>

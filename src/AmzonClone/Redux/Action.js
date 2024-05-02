@@ -26,6 +26,15 @@ export const setUser = (user) => ({
   type: types.SET_USER,
   payload: user,
 });
+
+export const setAddress = (address)=>({
+  type:types.SET_ADDRESS,
+  payload:address
+})
+export const setProduct = (product)=>({
+  type: types.UPDATE_PRODUCT,
+  payload:product
+})
 const loginFailure = (error) => ({
   type: types.REGISTER_FAILURE,
   payload: error,

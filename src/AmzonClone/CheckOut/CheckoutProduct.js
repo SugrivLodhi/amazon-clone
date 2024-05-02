@@ -3,11 +3,12 @@ import "./CheckoutProduct.css";
 import { useDispatch } from "react-redux";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { removeBasket } from "../Redux/Action";
-const CheckoutProduct = ({ id, title, image, rating, price }) => {
+import { toast } from "react-toastify";
+const CheckoutProduct = ({ id, title, image, rating, price,isHide }) => {
   let dispatch = useDispatch();
   const handleRemoveBasket = () => {
     dispatch(removeBasket(id));
-    alert("Do you want to Remove Item");
+    toast.success("Remove Item from cart successfully")
   };
   return (
     <div className="checkout-product">
@@ -24,12 +25,15 @@ const CheckoutProduct = ({ id, title, image, rating, price }) => {
         <h4>
           price :<span>${price}</span>
         </h4>
-        <button onClick={handleRemoveBasket}>
-          <i>
-            <ShoppingCartIcon />
-          </i>
-          remove from basket
-        </button>
+       {!isHide && (
+         <button onClick={handleRemoveBasket}>
+         <i>
+           <ShoppingCartIcon />
+         </i>
+         remove from basket
+       </button>
+       )}
+       
       </div>
     </div>
   );

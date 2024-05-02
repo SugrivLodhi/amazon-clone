@@ -16,6 +16,7 @@
 .header .header_location {
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 .header .header_location > a {
   color: aliceblue;
@@ -53,7 +54,7 @@
   height: 3.1rem;
   background-color: beige;
 }
-.header .header_input .header_search {
+.header > .header_input> .header_search {
   width: 4rem;
   height: 3.1rem;
   background-color: #e7b353;

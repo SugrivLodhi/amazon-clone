@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Img1 from "./Img/amazon_logo1.png";
 import Flag from "./Img/flag.png";
@@ -8,14 +8,34 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { useSelector, useDispatch } from "react-redux";
 import "./Header.css";
-import { logoutSuccess } from "./Redux/Action";
+import { logoutSuccess, setProduct } from "./Redux/Action";
+import { products } from "./ProductItem";
+import Location from "./Location";
 const Header = () => {
-  let { user, basket } = useSelector((state) => state.data);
+  let { user, basket, product,address } = useSelector((state) => state.data);
+  const [searchText, setSearchText] = useState("");
+  const [showModal, setShowModal] = useState(false);
+  
   let disptch = useDispatch();
   const handleLogout = () => {
     if (user) {
       disptch(logoutSuccess());
     }
+  };
+  useEffect(() => {
+    if (searchText.length > 0) {
+      const updatedpoduct = product?.filter((v) =>
+        v?.title?.toLowerCase()?.includes(searchText?.toLowerCase())
+      );
+      disptch(setProduct(updatedpoduct));
+    }
+     else {
+      disptch(setProduct(products));
+     }
+  }, [searchText]);
+
+  const handleChange = (e) => {
+    setSearchText(e.target.value);
   };
   return (
     <div className="header">
@@ -24,20 +44,22 @@ const Header = () => {
           <img src={Img1} alt="amazon" />
         </div>
       </Link>
-      <Link to="/location">
-        <div className="header_location">
+        <div onClick={() => setShowModal(true)} className="header_location">
           <LocationOnIcon className="location_icon" />
-          <div className="location_text">
+          <div  className="location_text">
             <p>Hello</p>
-            <h4>Select your address</h4>
+            <h4>{address?address:"Select your address"}</h4>
           </div>
+         
         </div>
-      </Link>
+        {showModal && (
+            <Location setShowModal={setShowModal}/>
+          )}
       <div className="header_input">
         <select>
           <option value="all">All</option>
         </select>
-        <input type="text" placeholder="Search" />
+        <input type="search" placeholder="Search" onChange={handleChange} />
         <Search className="header_search" />
       </div>
       <div className="header_flag">
@@ -50,15 +72,12 @@ const Header = () => {
           <h3>Account & Lists</h3>
         </div>
       </Link>
-      <Link to="/login">
-        <div className="header_sign">
-          <p>Your </p>
-          <h3>Prime</h3>
-        </div>
-      </Link>
       <Link to="/order">
         <div className="header_order">
-          <p>Returns<br/>& Orders</p>
+          <p>
+            Returns
+            <br />& Orders
+          </p>
         </div>
       </Link>
       <Link to="/checkout">

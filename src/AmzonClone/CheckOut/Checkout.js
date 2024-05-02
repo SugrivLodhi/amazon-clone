@@ -6,6 +6,7 @@ import CheckoutProduct from "./CheckoutProduct";
 import SubTotal from "./SubTotal";
 const Checkout = () => {
   let { user, basket } = useSelector((state) => state.data);
+  const isBasketNotEmpty =  basket?.length === 0;
   return (
     <div className="checkout">
       <img src={Img2} alt="offer" className="checkout-ad" />
@@ -13,11 +14,11 @@ const Checkout = () => {
         <div className="checkout-left">
           <h3>Hello ,{user ? user.email : "Gest"} </h3>
           <h2 className="checkout-title">
-            {basket.length === 0
-              ? "your shopping basket is empty"
-              : "your shopping basket"}
+            {isBasketNotEmpty
+              ? "your shopping cart is empty"
+              : "your shopping cart"}
           </h2>
-          {basket.map((item) => {
+          {basket?.map((item) => {
             return (
               <CheckoutProduct
                 key={item.id}
@@ -30,9 +31,11 @@ const Checkout = () => {
             );
           })}
         </div>
-        <div className="checkout-right">
-          <SubTotal />
-        </div>
+        {!isBasketNotEmpty && (
+          <div className="checkout-right">
+            <SubTotal />
+          </div>
+        )}
       </div>
     </div>
   );

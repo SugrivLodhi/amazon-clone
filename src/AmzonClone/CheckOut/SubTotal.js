@@ -6,7 +6,6 @@ import "./Subtotal.css";
 const SubTotal = () => {
   const { basket, user } = useSelector((state) => state.data);
   const navigate = useNavigate();
-  console.log("user in subtotal",user);
   const hanldeCheckout = () => {
     if (user) {
       navigate("/payment");

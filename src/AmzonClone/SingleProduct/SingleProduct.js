@@ -20,7 +20,6 @@ const SingleProduct = () => {
     };
     dispatch(addInBasket(item));
   };
-  console.log("single product", singleProduct);
   return (
     <div className="single-product-container">
       <img src={Img1} alt="banner_offer" className="single-product-ad" />

@@ -14,3 +14,5 @@ export const SET_USER = "SET_USER";
 
 export const ADD_BASKET = "ADD_BASKET";
 export const REMOVE_BASKET = "REMOVE_BASKET";
+export const UPDATE_PRODUCT = "UPDATE_PRODUCT";
+export const SET_ADDRESS ="SET_ADDRESS"

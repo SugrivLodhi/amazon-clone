@@ -51,3 +51,8 @@
   color: #111;
   cursor: pointer;
 }
+.payment-details >form > div>.disable-bg{
+  background-color: #EBEBE4 ;
+  color: #928383;
+  pointer-events: none;
+}

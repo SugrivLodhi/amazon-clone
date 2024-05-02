@@ -1,0 +1,21 @@
+.not-found-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .not-found-message {
+    text-align: center;
+  }
+  
+  .not-found-message h2 {
+    font-size: 2rem;
+    color: #333;
+  }
+  
+  .not-found-message p {
+    font-size: 1.2rem;
+    color: #777;
+  }
+  

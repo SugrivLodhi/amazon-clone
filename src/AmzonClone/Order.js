@@ -1,9 +1,15 @@
-import React from 'react'
+import React from "react";
+import CheckoutProduct from "./CheckOut/CheckoutProduct";
 
-const Order = () => {
+const Order = ({ order }) => {
   return (
-    <div>Order</div>
-  )
-}
+    <div>
+      <h3>Order ID {order.id}</h3>
+      {order?.data?.basket?.map((v) => (
+        <CheckoutProduct key={v.id} {...v} isHide />
+      ))}
+    </div>
+  );
+};
 
-export default Order
+export default Order;
